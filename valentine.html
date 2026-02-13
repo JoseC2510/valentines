@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>P&J ❤️</title>
+
+<style>
+body {
+    margin: 0;
+    overflow: hidden;
+    font-family: 'Georgia', serif;
+    background: linear-gradient(to bottom right, #ffdde1, #ee9ca7);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    color: #5a2a27;
+}
+
+/* Floating Hearts */
+.heart {
+    position: absolute;
+    color: rgba(255, 105, 180, 0.6);
+    font-size: 20px;
+    animation: floatUp linear infinite;
+}
+
+@keyframes floatUp {
+    0% { transform: translateY(100vh); opacity: 1; }
+    100% { transform: translateY(-10vh); opacity: 0; }
+}
+
+.container {
+    max-width: 700px;
+    padding: 45px;
+    background: rgba(255,255,255,0.92);
+    border-radius: 25px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+    text-align: center;
+    animation: fadeIn 2s ease-in-out;
+}
+
+h1 {
+    font-size: 30px;
+    margin-bottom: 20px;
+}
+
+p {
+    font-size: 18px;
+    line-height: 1.8;
+}
+
+.btn {
+    margin-top: 30px;
+    padding: 14px 35px;
+    border: none;
+    border-radius: 30px;
+    background: #e75480;
+    color: white;
+    font-size: 17px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+    background: #d43f6f;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+</style>
+</head>
+
+<body>
+
+<!-- Background Music -->
+<audio autoplay loop>
+    <source src="together.mp3" type="audio/mpeg">
+</audio>
+
+<div class="container" id="content">
+    <h1>Through the years...</h1>
+    <p>
+        My sweet girl, oh how I love you.<br><br>
+        Somehow… you still give me butterflies.<br><br>
+        We’ve grown. We’ve changed. We’ve lived through different seasons of life.<br>
+        But through all of it, one thing stayed the same —<br>
+        how special you’ve always been to me.
+    </p>
+
+    <button class="btn" onclick="showPoem()">Keep Reading ❤️</button>
+</div>
+
+<script>
+function showPoem() {
+    document.getElementById("content").innerHTML = `
+        <h1>Five Years, Still You</h1>
+        <p>
+        Five years ago, we were just moments.<br>
+        Conversations without knowing what they'd become.<br><br>
+
+        Somewhere between the laughter<br>
+        and the quiet talks,<br>
+        between growing up<br>
+        and growing into ourselves,<br>
+        you became constant.<br><br>
+
+        Not loud.<br>
+        Not rushed.<br>
+        Not temporary.<br><br>
+
+        Just steady.<br>
+        Just real.<br>
+        Just you.<br><br>
+
+        You’ve seen versions of me I barely recognized,<br>
+        and somehow, you stayed, you loved me.<br><br>
+
+        You love passionately but deeply.<br>
+        You smile playfully but mean every emotion.<br>
+        You care in ways that feel rare in this world.<br><br>
+        And if the years have taught me anything,<br>
+        it’s that some people don’t just pass through your life.<br><br>
+
+        They settle quietly in your heart...<br>
+        and one day you realize<br>
+        they’ve been home all along.
+        </p>
+
+        <button class="btn" onclick="finalQuestion()">One More Thing 💕</button>
+    `;
+}
+
+function finalQuestion() {
+    document.getElementById("content").innerHTML = `
+        <h1>So Here’s My Question...</h1>
+        <p>
+        Not just for a day.<br>
+        Not just because it's Valentine’s.<br><br>
+        But because I want you for this entire lifetime.<br>
+        I’ve chosen you quietly for longer than you probably knew.<br><br>
+        And I want to spend all of eternity with you now.
+        </p>
+        <h1>Will You Be My Valentine? 💘</h1>
+        <button class="btn" onclick="celebrate()">Yes, obviously 🥰</button>
+    `;
+}
+
+function celebrate() {
+    document.body.innerHTML = `
+        <div class="container">
+            <h1>You just made me the happiest man alive ❤️</h1>
+            <p>
+            Together again… and this time,<br>
+            it means even more.
+            </p>
+        </div>
+    `;
+}
+
+/* Floating Hearts Generator */
+setInterval(() => {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.innerHTML = "❤";
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.style.fontSize = (Math.random() * 20 + 15) + "px";
+    heart.style.animationDuration = (Math.random() * 3 + 4) + "s";
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 7000);
+}, 300);
+</script>
+
+</body>
+</html>
